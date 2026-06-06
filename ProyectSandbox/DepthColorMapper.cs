@@ -15,7 +15,7 @@ namespace ProyectoSandbox
             for (int i = 0; i < depth.Length; i++)
             {
                 float v = depth[i];
-                int o = i * 4; // offset en buffer BGRA
+                int o = i * 4;
 
                 // Píxel sin datos → magenta oscuro distintivo
                 if (v <= 0f)

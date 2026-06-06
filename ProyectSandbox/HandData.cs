@@ -7,17 +7,17 @@ namespace ProyectoSandbox
 
     public class HandData
     {
-        // Posición normalizada [0-1] dentro del frame recortado
+        
         public float X { get; set; }
         public float Y { get; set; }
         // Profundidad en metros
         public float Z { get; set; }
 
         public bool IsTracked { get; set; }
-        public bool IsRight { get; set; }   // siempre true en top-down (no distinguimos)
+        public bool IsRight { get; set; }
 
         public HandState State { get; set; } = HandState.Unknown;
         public SwipeDirection Swipe { get; set; } = SwipeDirection.None;
-        public int Fingers { get; set; }   // 0-5
+        public int Fingers { get; set; }
     }
 }

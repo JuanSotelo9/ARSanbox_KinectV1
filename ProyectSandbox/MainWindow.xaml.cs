@@ -14,7 +14,6 @@ namespace ProyectoSandbox
         private readonly SharedMemoryDepthSender _shmDepth = new SharedMemoryDepthSender();
         private readonly UdpHandSender _udpHand = new UdpHandSender("127.0.0.1", 5001);
         private OpenCvHandTracker _cvTracker;
-        // Renderizado
         private WriteableBitmap _bitmap;
         private byte[] _bgraBuffer;
         private ColorMapType _colorMap = ColorMapType.Grayscale;
@@ -49,7 +48,7 @@ namespace ProyectoSandbox
                 _reader.Start();
                 Console.WriteLine("✓ KinectDepthReader iniciado");
 
-                // HandTracker usa el mismo sensor ya iniciado
+                
                 _cvTracker = new OpenCvHandTracker
                 {
                     // Ajusta estos valores en laboratorio según tu setup físico
@@ -130,7 +129,7 @@ namespace ProyectoSandbox
         // ── Frame de mano ─────────────────────────────────────────────────────
         private void OnHandReady(object sender, HandData hand)
         {
-            // Enviar a Unity siempre (trackeado o no, Unity decide qué hacer)
+            
             _udpHand.Send(hand);
 
             // Actualizar UI con estado de la mano

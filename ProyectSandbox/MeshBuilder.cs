@@ -9,10 +9,6 @@ namespace ProyectoSandbox
     /// </summary>
     public static class MeshBuilder
     {
-        // Cuántos píxeles saltar entre vértices.
-        // Step=4 → malla de 160×120 = 19 200 vértices (manejable en Unity)
-        // Step=2 → malla de 320×240 = 76 800 vértices (más detalle, más pesado)
-        // Step=1 → malla de 640×480 = 307 200 vértices (máximo, puede ser lento)
         public const int DefaultStep = 4;
 
         // Escala del terreno en Unity (unidades del mundo)
@@ -34,8 +30,8 @@ namespace ProyectoSandbox
             int cols = srcWidth / step;   // número de columnas de vértices
             int rows = srcHeight / step;   // número de filas de vértices
 
-            var vertices = new List<float[]>(cols * rows);     // cada float[3] = {x, y, z}
-            var triangles = new List<int[]>((cols - 1) * (rows - 1) * 2); // cada int[3] = índices
+            var vertices = new List<float[]>(cols * rows);    
+            var triangles = new List<int[]>((cols - 1) * (rows - 1) * 2); 
 
             // ── Generar vértices ──────────────────────────────────────────────
             for (int row = 0; row < rows; row++)
